@@ -22,4 +22,13 @@ public class PersonServiceDefaultTest {
         assertThat(personPersisted.getFirstName(), is(person.getFirstName()));
     }
 
+    @Test
+    public void testFindByLastName() {
+        Person person = new Person("1", "Keshav", "Baweja", 25);
+        personService.persist(person);
+        Person personFound = personService.findByLastName("Baweja").get(0);
+        assertThat(personFound.getId(), is(person.getId()));
+        assertThat(personFound.getFirstName(), is(person.getFirstName()));
+    }
+
 }
