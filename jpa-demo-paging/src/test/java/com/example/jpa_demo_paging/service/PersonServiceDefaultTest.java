@@ -43,8 +43,8 @@ public class PersonServiceDefaultTest {
         Person p2 = new Person("2", "Novak", "Baweja", 31);
         personService.persist(p2);
 
-        List<Person> found = personService.findByLastName("Baweja", PageRequest.of(0,2));
-        assertThat(found.size(), is(2));
+        List<Person> found = personService.findByLastName("Baweja", PageRequest.of(1,1));
+        assertThat(found.size(), is(1));
     }
 
 }
