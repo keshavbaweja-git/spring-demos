@@ -15,10 +15,11 @@ public class Employee {
 
     @Id
     private String id;
+
     private String name;
 
     @OneToOne
-    @PrimaryKeyJoinColumn
+    @JoinColumn(name = "employee_id")
     @Setter
     private EmployeeDetail employeeDetail;
 
